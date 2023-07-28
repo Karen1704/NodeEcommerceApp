@@ -24,7 +24,7 @@ const verifyToken = (req,res,next)=>{
 
 const verifyTokenAuthorization = (req,res,next)=>{
     verifyToken(req,res,()=>{
-        if(req.user.id === req.params.id){
+        if(req.user._id === req.params.id){
             next();
         }
         else{

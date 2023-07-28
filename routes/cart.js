@@ -3,7 +3,7 @@ const { verifyTokenAndAdmin, verifyToken, verifyTokenAuthorization } = require('
 const cartRouter = require('express').Router();
 
 //Create cart
-cartRouter.post('/', verifyTokenAuthorization , async (req,res)=>{
+cartRouter.post('/', verifyToken, async (req,res)=>{
     const newCart = new Cart(req.body);
     try{
         const savedCart = await newCart.save();
